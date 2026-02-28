@@ -13,19 +13,14 @@ namespace TechMAssignment
         [OneTimeSetUp]
         public void Setup()
         {
-
+            //creating the chrome options instance to enable automation.
             var options = new ChromeOptions();
-            options.AddArgument("--disable-blink-features=AutomationControlled");
-            options.AddArgument("--headless");
             options.AddExcludedArgument("enable-automation");
             //Launching the Chrome instance.
             driver = new ChromeDriver(options);
 
             //creating the map class element
             OpenCartMapElements = new OpenCartMapElements(driver);
-
-            var js = (IJavaScriptExecutor) driver;
-
 
             //setting the implicit wait as 10 secs
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -40,7 +35,7 @@ namespace TechMAssignment
             //Arranging 
             string url = "https://demo.opencart.com";
 
-            //Act: navigating to 'https://demo.opencart.com'
+            //Act
             driver.Navigate().GoToUrl(url);
 
             //Assert: 
@@ -151,7 +146,9 @@ namespace TechMAssignment
         [OneTimeTearDown]
         public void TearDown() 
         { 
+            //Disposing the instance
             driver.Dispose();
         }
     }
+
 }
