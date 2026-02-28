@@ -18,7 +18,7 @@ Technology Stack:
     Language: C# (.NET 6) or above
     UI Automation: Selenium WebDriver
     Test Framework: NUnit
-    Assertion Library: Default Assertions
+    Assertion Library: Fluent / Default Assertions 
     Version Control: Git
 
 🎯 Objective
